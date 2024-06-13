@@ -1,4 +1,4 @@
-nav span {
+.nav-title {
   font-family: 'Bungee', sans-serif;
 }
 
@@ -20,6 +20,3 @@ nav {
     align-items: center;
 }
 
-.prompt i {
-  color: red;
-}
