@@ -1,8 +1,9 @@
 header {
   height: 400px;
-  width: 100%;
-  background-color: #eca012;
-  background-image: url('path/to/your/image.jpg');
+  width: 100%; 
+  background-color: #de7a00;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   display: flex;
   flex-direction: column; 
   align-items: center;
