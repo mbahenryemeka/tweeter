@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  background-color: #eca012;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; /* Centers the children vertically */
+  padding: 20px; /* Optional: add some padding to give it some space */
+  text-align: center;
+}
+
+/* Ensuring the avatar image fits well */
+header img {
+  max-width: 100px; /* Or whatever size you prefer */
+  border-radius: 50%; /* Makes the avatar circular */
+}
+
+header h2 {
+  margin-top: 10px; /* Adds some space between avatar and name */
+  
+}
