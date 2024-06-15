@@ -16,8 +16,11 @@
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
   font-size: medium;
+}
 
-  
-
+#input{
+  font-family: 'Bungee', sans-serif;
+  font-size: xx-small;
+  color: rgba(0, 0, 0, 0.404)
 }
 
