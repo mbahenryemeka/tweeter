@@ -1,17 +1,17 @@
-section label{ 
+.new-tweet label{ 
   border-bottom: 2px solid rgba(0, 0, 0, 0.616);
   margin-bottom: 10px; 
   display: block; 
   padding-bottom: 10px; 
 }
 
-section button{
+.new-tweet button{
   background-color: #4056A1;
   border-color: #4056A1;  
   color: white;
 }
 
-section div{
+.new-tweet div{
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
