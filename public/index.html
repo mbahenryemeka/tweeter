@@ -24,11 +24,20 @@
     <!--Header CSS-->
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
 
+    <!--new-tweet CSS-->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!--Script for composer-char-counter.js-->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+
+    
 
     <!--link to angle double down icon-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -58,19 +67,22 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h2>The tweets will eventually appear in this area. For now, just add some content here to see how it looks. I think this is a good content. </h2>
-      <p>Just testing</p>
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="post" action="/tweets/">
+      <section class="new-tweet">       
+        <form id="text-area-form" method="post" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+          <textarea class='input' name="text" id="tweet-text" placeholder="Start typing..."></textarea>
+          <div class="line"></div>
+          <div class="counter-container">
+           
+          </div>
+          <div>            
+            <button class="submit" type="submit">Tweet</button>
+            <span class="counter">140</span>
+           
           </div>
         </form>
       </section>
     </main>
+    
   </body>
 </html>
