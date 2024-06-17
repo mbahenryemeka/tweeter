@@ -1,0 +1,35 @@
+
+/* Style for each tweet */
+article {
+  height: 200px;
+  border: 2px solid rgba(0, 0, 0, 0.575);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #f4f1ec; /* Add background color here */
+}
+
+article .tweet{
+  margin-top: 100px;
+}
+
+/* Style for the tweet header */
+article header {
+  height: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f1ec;
+}
+
+/* Style for the tweet footer */
+article footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Hover effect for the tweet */
+article:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

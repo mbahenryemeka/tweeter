@@ -1,9 +1,9 @@
 header {
+  display: flex;
   height: 400px;
   width: 100%; 
   background-color: #de7a00;
-  background-image: url("https://www.transparenttextures.com/patterns/arches.png");  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  display: flex;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png"); 
   flex-direction: column; 
   align-items: center;
   justify-content: center; /* Centers the children vertically */
@@ -13,11 +13,11 @@ header {
 
 /* Ensuring the avatar image fits well */
 header img {
-  max-width: 100px; /* Or whatever size you prefer */
+  max-width: 200px; /* Or whatever size you prefer */
   border-radius: 50%; /* Makes the avatar circular */
 }
 
 header h2 {
-  margin-top: 10px; /* Adds some space between avatar and name */
+  margin-top: 30px; /* Adds some space between avatar and name */
   
 }

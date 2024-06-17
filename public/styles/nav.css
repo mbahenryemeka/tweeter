@@ -3,6 +3,7 @@
 }
 
 nav { 
+  display: flex;
   position: fixed;
   top: 0px;
   height: 120px;
@@ -10,8 +11,7 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 0 1.5em; /* 1.5ems of space on the right and left */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
-  display: flex;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */  
   align-items: center; /* Center content vertically */
   justify-content: space-between;
 }

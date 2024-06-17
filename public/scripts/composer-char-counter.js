@@ -1,28 +1,28 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-  const form = document.getElementById('text-area-form');
+$(document).ready(function() {
+  const textarea = $('#tweet-text');
+  const counter = $('.new-tweet .counter');
   
-
-  const textarea = document.querySelector('.new-tweet form textarea');
-  const counter = document.querySelector('.new-tweet .counter');
-
-
-
-  textarea.addEventListener('input', () => {
+  textarea.on('input', () => {
     const maxChars = 140;
-    const currentChars = textarea.value.length;
-    const remainingChars = maxChars - currentChars;
+    const currentChars = textarea.val().length;
+    const remainingChars = maxChars - currentChars; 
     
-    counter.textContent = remainingChars;
+    //  Put the value of remainingChars as text for counter.
+    counter.text(remainingChars);
 
     if (remainingChars < 0) {
-      counter.classList.add('exceeded-limit');      
+      //counter.classList.add('exceeded-limit'); 
+      counter.addClass('exceeded-limit');    
     } else {
-      counter.classList.remove('exceeded-limit');
-    }
+      //counter.classList.remove('exceeded-limit');      
+      counter.removeClass('exceeded-limit');
+    }  
 
-    textarea.style.height = 'auto';
-    textarea.style.height = textarea.scrollHeight + 'px';    
-  });
+  }); 
 
-  textarea.dispatchEvent(new Event('input'));
-})
+});
+
+
+
+
+
