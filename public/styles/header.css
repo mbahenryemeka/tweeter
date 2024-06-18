@@ -1,4 +1,4 @@
-header {
+#first-header {
   display: flex;
   height: 400px;
   width: 100%; 
@@ -12,12 +12,12 @@ header {
 }
 
 /* Ensuring the avatar image fits well */
-header img {
+#first-header img{
   max-width: 200px; /* Or whatever size you prefer */
   border-radius: 50%; /* Makes the avatar circular */
 }
 
-header h2 {
+#first-header h2{
   margin-top: 30px; /* Adds some space between avatar and name */
   
 }
