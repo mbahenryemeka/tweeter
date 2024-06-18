@@ -1,31 +1,40 @@
 
 /* Style for each tweet */
 article {
-  height: 200px;
+  height: auto;
   border: 2px solid rgba(0, 0, 0, 0.575);
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
   background-color: #f4f1ec; /* Add background color here */
-}
-
-article .tweet{
-  margin-top: 100px;
+  font-size: 16px;
 }
 
 /* Style for the tweet header */
 article header {
-  height: 180px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #f4f1ec;
 }
+ article p {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.575);
+ }
+
+ article h2 {
+  font-weight: normal;
+ }
+
+ article address{
+  color:rgb(155, 197, 183);
+  font-style: normal;
+ }
 
 /* Style for the tweet footer */
 article footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
