@@ -26,7 +26,7 @@ article header {
   font-weight: normal;
  }
 
- article address{
+ article h3{
   color:rgb(155, 197, 183);
   font-style: normal;
  }
@@ -40,13 +40,13 @@ article footer {
   margin-right: 40px; 
 }
 
-article .icons {
+ .icons {
   color:rgb(49, 49, 114);
 }
 
 
 /* Hover effect for the tweet */
 article i:hover {
-  color: #1da1f2;
+  color: #a9d257;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
