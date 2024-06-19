@@ -9,15 +9,12 @@
   justify-content: center; /* Centers the children vertically */
   padding: 20px; /* Optional: add some padding to give it some space */
   text-align: center;
+  margin-top: 0px;
 }
 
 /* Ensuring the avatar image fits well */
 #first-header img{
-  max-width: 200px; /* Or whatever size you prefer */
-  border-radius: 50%; /* Makes the avatar circular */
+  max-width: 200px; 
+  border-radius: 50%; 
 }
 
-#first-header h2{
-  margin-top: 30px; /* Adds some space between avatar and name */
-  
-}
