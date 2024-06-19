@@ -1,6 +1,6 @@
 
 /* Style for each tweet */
-article {
+.tweet {
   height: auto;
   border: 2px solid rgba(0, 0, 0, 0.575);
   padding: 10px;
@@ -11,28 +11,34 @@ article {
 }
 
 /* Style for the tweet header */
-article header {
+.tweet header {
   height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #f4f1ec;
 }
- article p {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.575);
- }
 
- article h2 {
+.tweet-text {
+  margin-left: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.575);
+  margin-bottom: 10px; 
+  padding-bottom: 20px;
+}
+
+ 
+
+ .tweet h2 {
   font-weight: normal;
  }
 
- article h3{
+ .tweet h3{
   color:rgb(155, 197, 183);
   font-style: normal;
  }
 
 /* Style for the tweet footer */
-article footer {
+.tweet footer {
   display: flex;
   justify-content: space-between; 
   align-items: center;
@@ -40,13 +46,20 @@ article footer {
   margin-right: 40px; 
 }
 
- .icons {
+.tweet .icons {
   color:rgb(49, 49, 114);
 }
 
-
-/* Hover effect for the tweet */
-article i:hover {
-  color: #a9d257;
+.tweet:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Hover effect for the tweet */
+.tweet :hover {
+  color: yellowgreen;
+  
+}
+
+.tweet i:hover {
+  color: yellowgreen;
+  
 }
