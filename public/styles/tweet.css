@@ -34,11 +34,18 @@ article header {
 /* Style for the tweet footer */
 article footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
+  margin-left: 20px; 
+  margin-right: 20px; 
 }
 
+article .icons {
+  color:rgb(49, 49, 114);
+}
+
+
 /* Hover effect for the tweet */
-article:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+article i:hover {
+  color: yellowgreen;
 }
