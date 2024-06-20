@@ -20,22 +20,25 @@
 }
 
 .tweet-text {
-  margin-left: 0;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.575);
+  margin-left: 40px;
+ 
   margin-bottom: 10px; 
   padding-bottom: 20px;
 }
 
+.hline {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.575);
+}
  
 
- .tweet h2 {
+.tweet h2 {
   font-weight: normal;
- }
+}
 
- .tweet h3{
+.tweet h3{
   color:rgb(155, 197, 183);
   font-style: normal;
- }
+}
 
 /* Style for the tweet footer */
 .tweet footer {
