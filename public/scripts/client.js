@@ -48,7 +48,7 @@ const data = [
 const renderTweets = function(tweetsArray) {
   for (const tweet of tweetsArray) {    
     let $tweet = createTweetElement(tweet);
-    $('.tweets-container').append($tweet);
+    $('.tweets-container').prepend($tweet);
   }
 }
 
