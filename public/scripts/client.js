@@ -59,8 +59,15 @@ $(document).ready(()=>{
 
   $('#text-area-form').on('submit', function(event) {
     event.preventDefault();
-    console.log("lets be sure!");
-    console.log('formData', this);
+
+    let tweetContent = $('#tweet-text').val().trim();
+    if (tweetContent === ''){
+      alert('Tweet content cannot be empty');
+      return;
+    } else if (tweetContent.length > 140) {
+      alert('Tweet content exceeds 140 characters');
+      return;
+    }    
     let formData = $(this).serialize();
     console.log(formData);
     $.ajax({
