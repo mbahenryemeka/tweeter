@@ -1,4 +1,5 @@
-const createTweetElement = function (tweet) {
+$(document).ready(()=>{
+  const createTweetElement = function (tweet) {
   const $tweet = $(`
   <article class="tweet">          
           <header>
@@ -7,20 +8,20 @@ const createTweetElement = function (tweet) {
           </header>        
           <section class="tweet-text">${tweet.content.text}</section>
           <hr class="hline"/>
-          <footer>
-            <time>${new Date(tweet.created_at).toLocaleString()}</time>
+          <footer>            
+            <time>${timeago.format(tweet.created_at)}</time>
             <span class="icons"> 
               <i class="fa-solid fa-flag"></i> 
               <i class="fa fa-retweet"></i>
-              <i class="fa fa-heart">'</i>         
+              <i class="fa fa-heart"></i>         
             </span>
           </footer>
-        </article>
-  `)
-  return $tweet;
-}
+          </article>
+    `)
+    return $tweet;
+  }
 
-const data = [
+  const data = [
   {
     "user": {
       "name": "Newton",
@@ -43,17 +44,51 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+  ] 
 
-const renderTweets = function(tweetsArray) {
-  for (const tweet of tweetsArray) {    
+  const renderTweets = function(tweetsArray) {
+    for (const tweet of tweetsArray) {    
     let $tweet = createTweetElement(tweet);
     $('.tweets-container').prepend($tweet);
+    }
   }
-}
 
-renderTweets(data);
+  renderTweets(data);
 
+
+
+  $('#text-area-form').on('submit', function(event) {
+    event.preventDefault();
+    console.log("lets be sure!");
+    console.log('formData', this);
+    let formData = $(this).serialize();
+    console.log(formData);
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: formData,      
+    })
+      .then((response)=>{
+      
+      })
+  })
+
+  const loadTweets = () => {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: function(tweets) {
+        console.log('show me how it will render', tweets );
+        renderTweets(tweets);
+      },
+      error: function(err) {
+        console.error('Error fetching tweets:', err)
+      }
+    })    
+  }
+  loadTweets();
+})
 
 
 
