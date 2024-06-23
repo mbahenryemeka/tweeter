@@ -75,12 +75,19 @@ $(document).ready(()=>{
       alert(validationMessage);
       return;
     }
-    
+
     let formData = $(this).serialize();   
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: formData,      
+    }).done (() => {     
+      $.ajax({
+        method: "GET",
+        url: "/tweets",        
+      }).done((tweets) => {
+        renderTweets(tweets);
+      })
     })      
   })
 
@@ -89,8 +96,7 @@ $(document).ready(()=>{
       url: '/tweets',
       method: 'GET',
       dataType: 'json',
-      success: function(tweets) {
-        console.log('show me how it will render', tweets );
+      success: function(tweets) {       
         renderTweets(tweets);
       },
       error: function(err) {
