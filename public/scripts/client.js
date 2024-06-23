@@ -47,13 +47,13 @@ $(document).ready(()=>{
   ] 
 
   const renderTweets = function(tweetsArray) {
+    //  empty tweet container
+    $('.tweets-container').empty();
     for (const tweet of tweetsArray) {    
     let $tweet = createTweetElement(tweet);
     $('.tweets-container').prepend($tweet);
     }
   }
-
-  renderTweets(data);
 
   function isTweetValid(tweetContent) {
     if (tweetContent.trim() === "") {
@@ -64,32 +64,6 @@ $(document).ready(()=>{
     }
     return true;
   }
-
-
-  $('#text-area-form').on('submit', function(event) {
-    event.preventDefault();
-
-    let tweetContent = $('#tweet-text').val().trim();
-    let validationMessage = isTweetValid(tweetContent);
-    if (validationMessage !== true){
-      alert(validationMessage);
-      return;
-    }
-
-    let formData = $(this).serialize();   
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: formData,      
-    }).done (() => {     
-      $.ajax({
-        method: "GET",
-        url: "/tweets",        
-      }).done((tweets) => {
-        renderTweets(tweets);
-      })
-    })      
-  })
 
   const loadTweets = () => {
     $.ajax({
@@ -104,6 +78,33 @@ $(document).ready(()=>{
       }
     })    
   }
+
+
+  $('#text-area-form').on('submit', function(event) {
+    event.preventDefault();
+
+    let tweetContent = $('#tweet-text').val().trim();
+    let validationMessage = isTweetValid(tweetContent);
+    if (validationMessage !== true){
+      alert(validationMessage);
+      return;
+    } 
+    let formData = $(this).serialize();   
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: formData,      
+    }).done (() => {     
+      $.ajax({
+        method: "GET",
+        url: "/tweets",        
+      }).done(() => {
+        loadTweets();
+      })
+    })      
+  })
+
+  
   loadTweets();
 })
 
