@@ -55,29 +55,33 @@ $(document).ready(()=>{
 
   renderTweets(data);
 
+  function isTweetValid(tweetContent) {
+    if (tweetContent.trim() === "") {
+      return "Tweet content cannot be empty";
+    }
+    if (tweetContent.length > 140) {
+      return "Tweet content exceeds 140 characters";
+    }
+    return true;
+  }
 
 
   $('#text-area-form').on('submit', function(event) {
     event.preventDefault();
 
     let tweetContent = $('#tweet-text').val().trim();
-    if (tweetContent === ''){
-      alert('Tweet content cannot be empty');
+    let validationMessage = isTweetValid(tweetContent);
+    if (validationMessage !== true){
+      alert(validationMessage);
       return;
-    } else if (tweetContent.length > 140) {
-      alert('Tweet content exceeds 140 characters');
-      return;
-    }    
-    let formData = $(this).serialize();
-    console.log(formData);
+    }
+    
+    let formData = $(this).serialize();   
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: formData,      
-    })
-      .then((response)=>{
-      
-      })
+    })      
   })
 
   const loadTweets = () => {
