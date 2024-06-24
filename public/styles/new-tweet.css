@@ -26,6 +26,18 @@
   padding-bottom: 2px;
 }
 
+.error-message {
+  color: #D8000C;
+  font-size: 14px;
+  background-color: #FFBABA;
+  border: 1px solid #D8000C;
+  padding: 10px;
+  display: none; /* Hide it initially */
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .new-tweet button{
   background-color: #4056A1;
   border-color: #4056A1;  
@@ -49,3 +61,4 @@
 .exceeded-limit {
   color: red;
 }
+
