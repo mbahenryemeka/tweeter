@@ -1,4 +1,5 @@
 $(document).ready(()=>{
+  $('.error-message').hide();
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -69,7 +70,7 @@ $(document).ready(()=>{
       return "Tweet content cannot be empty";
     }
     if (tweetContent.length > 140) {
-      return "Tweet content exceeds 140 characters";
+      return "Too long. Plz respect our arbitrary limit of 140 characters.";
     }
     return true;
   }
@@ -92,14 +93,20 @@ $(document).ready(()=>{
   $('#text-area-form').on('submit', function(event) {
     //  HTML not to submit the form
     event.preventDefault();
+
+    // Slide up any visible error messages before starting validation
+    $('.error-message').slideUp();
+
     //  Check for valid messages
     let tweetContent = $('#tweet-text').val().trim();
     let validationMessage = isTweetValid(tweetContent);
     if (validationMessage !== true){
-      alert(validationMessage);
-      return;
-    } 
-    //  creat a URL-encoded notation.
+     // If there is an error, display the error message in the div and slide it down
+    $('.error-message').text(validationMessage).slideDown();
+    return; // Prevent form submission
+    }
+
+    //  proceed to creat a URL-encoded notation if no error.
     let formData = $(this).serialize();
     //  use jQuery method to Post to /tweets.  
     $.ajax({
