@@ -1,4 +1,10 @@
 $(document).ready(()=>{
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function (tweet) {
   const $tweet = $(`
   <article class="tweet">          
@@ -6,7 +12,7 @@ $(document).ready(()=>{
               <h2><img src="${tweet.user.avatars}" alt="${tweet.user.name}'s avatar"/> ${tweet.user.name} </h2>
               <h3>${tweet.user.handle}</h3>
           </header>        
-          <section class="tweet-text">${tweet.content.text}</section>
+          <section class="tweet-text">${escape(tweet.content.text)}</section>
           <hr class="hline"/>
           <footer>            
             <time>${timeago.format(tweet.created_at)}</time>
@@ -46,6 +52,9 @@ $(document).ready(()=>{
   }
   ] 
 
+  
+
+
   const renderTweets = function(tweetsArray) {
     //  empty tweet container
     $('.tweets-container').empty();
@@ -64,7 +73,7 @@ $(document).ready(()=>{
     }
     return true;
   }
-
+  //  function to load the tweets on the browser.
   const loadTweets = () => {
     $.ajax({
       url: '/tweets',
@@ -79,32 +88,35 @@ $(document).ready(()=>{
     })    
   }
 
-
+    //  Add a submit handler
   $('#text-area-form').on('submit', function(event) {
+    //  HTML not to submit the form
     event.preventDefault();
-
+    //  Check for valid messages
     let tweetContent = $('#tweet-text').val().trim();
     let validationMessage = isTweetValid(tweetContent);
     if (validationMessage !== true){
       alert(validationMessage);
       return;
     } 
-    let formData = $(this).serialize();   
+    //  creat a URL-encoded notation.
+    let formData = $(this).serialize();
+    //  use jQuery method to Post to /tweets.  
     $.ajax({
       method: "POST",
       url: "/tweets",
-      data: formData,      
+      data: formData,
+      //  use jQuery to get tweets from the server.     
     }).done (() => {     
       $.ajax({
         method: "GET",
-        url: "/tweets",        
+        url: "/tweets", 
+      //  call function that loads the tweet when done getting the tweet.       
       }).done(() => {
         loadTweets();
       })
     })      
-  })
-
-  
+  })  
   loadTweets();
 })
 
