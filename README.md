@@ -19,3 +19,8 @@ Welcome to my Tweet App! This project is a fantastic opportunity to practice and
 - nodemon
 - body-parser
 - md5
+
+## Screenshots
+
+!["screenshot of tweet"] (https://github.com/mbahenryemeka/tweeter/blob/master/docs/twitter_A.png)
+!["screenshot of tweet"] (https://github.com/mbahenryemeka/tweeter/blob/master/docs/twitter_B.png)
