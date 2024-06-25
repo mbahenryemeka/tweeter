@@ -29,8 +29,6 @@ main {
   width: 90%;
   margin: 2em auto;
   background-color: #f4f1ec;
-  
-
 }
 
 /*
@@ -43,7 +41,6 @@ main {
     width: 100%
   }
   main {
-    width: 60%;
-  
+    width: 60%;  
   }
 }

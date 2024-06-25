@@ -1,12 +1,12 @@
 $(document).ready(() => {
   $('.error-message').hide();
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     const $tweet = $(`
   <article class="tweet">          
           <header>
@@ -27,9 +27,9 @@ $(document).ready(() => {
             </span>
           </footer>
           </article>
-    `)
+    `);
     return $tweet;
-  }
+  };
 
   const data = [
     {
@@ -55,19 +55,19 @@ $(document).ready(() => {
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
 
 
 
 
-  const renderTweets = function (tweetsArray) {
+  const renderTweets = function(tweetsArray) {
     //  empty tweet container
     $('.tweets-container').empty();
     for (const tweet of tweetsArray) {
       let $tweet = createTweetElement(tweet);
       $('.tweets-container').prepend($tweet);
     }
-  }
+  };
 
   function isTweetValid(tweetContent) {
     if (tweetContent.trim() === "") {
@@ -84,17 +84,17 @@ $(document).ready(() => {
       url: '/tweets',
       method: 'GET',
       dataType: 'json',
-      success: function (tweets) {
+      success: function(tweets) {
         renderTweets(tweets);
       },
-      error: function (err) {
-        console.error('Error fetching tweets:', err)
+      error: function(err) {
+        console.error('Error fetching tweets:', err);
       }
-    })
-  }
+    });
+  };
 
   //  Add a submit handler
-  $('#text-area-form').on('submit', function (event) {
+  $('#text-area-form').on('submit', function(event) {
     //  HTML not to submit the form
     event.preventDefault();
 
@@ -112,20 +112,20 @@ $(document).ready(() => {
 
     //  proceed to creat a URL-encoded notation if no error.
     let formData = $(this).serialize();
-    //  use jQuery method to Post to /tweets.  
+    //  use jQuery method to Post to /tweets.
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: formData,
     }).done(() => {
       loadTweets();
-      $('#tweet-text').val('')
-      $('.counter').text('140')
-    })
-  })
+      $('#tweet-text').val('');
+      $('.counter').text('140');
+    });
+  });
 
   loadTweets();
-})
+});
 
 
 
