@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-Welcome to my Tweet App! This project is a fantastic opportunity to practice and showcase your skills in HTML, CSS, JavaScript, jQuery, AJAX, Node.js, and Express. Fork and clone this repository to get started on building a dynamic, full-stack web application.
+Welcome to my Tweet App! This project is a fantastic opportunity to practice and showcase my skills in HTML, CSS, JavaScript, jQuery, AJAX, Node.js, and Express. Fork and clone this repository to get started on building a dynamic, full-stack web application.
 
 ## Getting Started
 
