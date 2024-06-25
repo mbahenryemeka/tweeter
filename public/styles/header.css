@@ -1,9 +1,10 @@
-#first-header {
-  display: flex;
+.header { 
   height: 400px;
-  width: 100%; 
+  width: 100%;
+  color: white; 
   background-color: #de7a00;
-  background-image: url("https://www.transparenttextures.com/patterns/arches.png"); 
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  display: flex; 
   flex-direction: column; 
   align-items: center;
   justify-content: center; /* Centers the children vertically */
@@ -13,8 +14,18 @@
 }
 
 /* Ensuring the avatar image fits well */
-#first-header img{
+.header img{
   max-width: 200px; 
   border-radius: 50%; 
 }
 
+.header p{
+  font-size: 1.5em;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    width: 25%;
+    margin: 2em;
+  }
+}

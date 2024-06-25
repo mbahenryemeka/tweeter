@@ -3,8 +3,8 @@
 .tweet {
   height: auto;
   border: 2px solid rgba(0, 0, 0, 0.575);
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 1em;
+  margin-bottom: 1.5em;
   border-radius: 10px;
   background-color: #f4f1ec; /* Add background color here */
   font-size: 16px;
@@ -17,6 +17,11 @@
   justify-content: space-between;
   align-items: center;
   background-color: #f4f1ec;
+}
+
+.tweet header div {
+  display: flex;
+  align-items: center;
 }
 
 .tweet-text {
@@ -57,7 +62,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 /* Hover effect for the tweet */
-.tweet :hover {
+.tweet .icons :hover {
   color: yellowgreen;
   
 }
@@ -66,3 +71,4 @@
   color: yellowgreen;
   
 }
+
